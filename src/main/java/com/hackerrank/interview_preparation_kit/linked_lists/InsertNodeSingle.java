@@ -1,5 +1,7 @@
 package com.hackerrank.interview_preparation_kit.linked_lists;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class InsertNodeSingle {
@@ -32,10 +34,12 @@ public class InsertNodeSingle {
     }
 
     private static void printSinglyLinkedList(SinglyLinkedListNode node) {
+        List<String> l = new ArrayList<>();
         while (node != null) {
-            System.out.print(String.valueOf(node.data) + "->");
+            l.add(String.valueOf(node.data));
             node = node.next;
         }
+        System.out.println(String.join("->", l));
     }
 
     private static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {

@@ -1,6 +1,7 @@
 package com.hackerrank.interview_preparation_kit.linked_lists;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,20 +42,32 @@ public class InsertNodeDouble {
     }
 
     private static void printDoublyLinkedList(DoublyLinkedListNode node) {
+        List<String> l = new ArrayList<>();
         while (node != null) {
-            System.out.print(String.valueOf(node.data) + "->");
+            l.add(String.valueOf(node.data));
             node = node.next;
         }
+        System.out.println(String.join("->", l));
     }
 
     private static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
         // TODO write your code here
         List<Integer> l = new ArrayList<>();
+        l.add(data);
         while (head != null) {
             l.add(head.data);
             head = head.next;
         }
-
+        Collections.sort(l);
+        DoublyLinkedListNode tmp = new DoublyLinkedListNode(l.get(0));
+        head = tmp;
+        for (int i = 1; i < l.size(); i++) {
+            DoublyLinkedListNode node = new DoublyLinkedListNode(l.get(i));
+            tmp.next = node;
+            node.prev = tmp;
+            tmp = tmp.next;
+        }
+        return head;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
