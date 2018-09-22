@@ -53,38 +53,6 @@ public class InsertNodeSingle {
         node.next = tmp2;
         return head;
     }
-
-    static class SinglyLinkedListNode {
-        int data;
-        SinglyLinkedListNode next;
-
-        SinglyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-        }
-    }
-
-    static class SinglyLinkedList {
-        SinglyLinkedListNode head;
-        private SinglyLinkedListNode tail;
-
-        SinglyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-
-        void insertNode(int nodeData) {
-            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
-
-            if (this.head == null) {
-                this.head = node;
-            } else {
-                this.tail.next = node;
-            }
-
-            this.tail = node;
-        }
-    }
 }
 
 

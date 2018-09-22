@@ -6,50 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InsertNodeDouble {
-    static class DoublyLinkedListNode {
-        int data;
-        DoublyLinkedListNode next;
-        DoublyLinkedListNode prev;
-
-        DoublyLinkedListNode(int nodeData) {
-            this.data = nodeData;
-            this.next = null;
-            this.prev = null;
-        }
-    }
-
-    static class DoublyLinkedList {
-        DoublyLinkedListNode head;
-        DoublyLinkedListNode tail;
-
-        DoublyLinkedList() {
-            this.head = null;
-            this.tail = null;
-        }
-
-        void insertNode(int nodeData) {
-            DoublyLinkedListNode node = new DoublyLinkedListNode(nodeData);
-
-            if (this.head == null) {
-                this.head = node;
-            } else {
-                this.tail.next = node;
-                node.prev = this.tail;
-            }
-
-            this.tail = node;
-        }
-    }
-
-    private static void printDoublyLinkedList(DoublyLinkedListNode node) {
-        List<String> l = new ArrayList<>();
-        while (node != null) {
-            l.add(String.valueOf(node.data));
-            node = node.next;
-        }
-        System.out.println(String.join("->", l));
-    }
-
     private static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
         List<Integer> l = new ArrayList<>();
         l.add(data);
@@ -93,7 +49,7 @@ public class InsertNodeDouble {
 
             DoublyLinkedListNode llist1 = sortedInsert(llist.head, data);
 
-            printDoublyLinkedList(llist1);
+            DoublyLinkedList.printDoublyLinkedList(llist1);
         }
 
         scanner.close();
