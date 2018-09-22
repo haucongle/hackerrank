@@ -1,15 +1,27 @@
 package com.hackerrank.interview_preparation_kit.linked_lists;
 
-class SinglyLinkedList {
-    public SinglyLinkedListNode head;
-    public SinglyLinkedListNode tail;
+import java.util.ArrayList;
+import java.util.List;
 
-    public SinglyLinkedList() {
+class SinglyLinkedList {
+    SinglyLinkedListNode head;
+    private SinglyLinkedListNode tail;
+
+    SinglyLinkedList() {
         this.head = null;
         this.tail = null;
     }
 
-    public void insertNode(int nodeData) {
+    static void printSinglyLinkedList(SinglyLinkedListNode node) {
+        List<String> l = new ArrayList<>();
+        while (node != null) {
+            l.add(String.valueOf(node.data));
+            node = node.next;
+        }
+        System.out.println(String.join("->", l));
+    }
+
+    void insertNode(int nodeData) {
         SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
 
         if (this.head == null) {
