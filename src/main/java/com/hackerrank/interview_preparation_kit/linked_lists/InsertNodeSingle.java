@@ -2,7 +2,7 @@ package com.hackerrank.interview_preparation_kit.linked_lists;
 
 import java.util.Scanner;
 
-public class InsertNode {
+public class InsertNodeSingle {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
