@@ -32,10 +32,10 @@ public class InsertNodeSingle {
     }
 
     private static void printSinglyLinkedList(SinglyLinkedListNode node) {
-        do {
+        while (node != null) {
             System.out.print(String.valueOf(node.data) + "->");
             node = node.next;
-        } while (node != null);
+        }
     }
 
     private static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
