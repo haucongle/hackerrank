@@ -51,7 +51,6 @@ public class InsertNodeDouble {
     }
 
     private static DoublyLinkedListNode sortedInsert(DoublyLinkedListNode head, int data) {
-        // TODO write your code here
         List<Integer> l = new ArrayList<>();
         l.add(data);
         while (head != null) {
