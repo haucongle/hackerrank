@@ -26,14 +26,14 @@ public class InsertNodeSingle {
 
         SinglyLinkedListNode llist_head = insertNodeAtPosition(llist.head, data, position);
 
-        printSinglyLinkedList(llist_head, "->");
+        printSinglyLinkedList(llist_head);
 
         scanner.close();
     }
 
-    private static void printSinglyLinkedList(SinglyLinkedListNode node, String sep) {
+    private static void printSinglyLinkedList(SinglyLinkedListNode node) {
         do {
-            System.out.print(String.valueOf(node.data) + sep);
+            System.out.print(String.valueOf(node.data) + "->");
             node = node.next;
         } while (node != null);
     }
